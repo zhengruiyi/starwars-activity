@@ -31,7 +31,7 @@ ReactDOM.render(
         <Route exact path="/" component={Explorer}/>
         <Route path="/starships" component={Starships} />
         <Route path="/films" component={Films} />
-        <Route path="/people" component={People} />
+        <Route path="/characters" component={People} />
       </Switch>
     </BaseLayout>
   </BrowserRouter>
