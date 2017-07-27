@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // Import Link <<<<<<<<<<<<<
+import {Link} from 'react-router-dom';
 
 
 class List extends Component {
@@ -13,12 +14,18 @@ class List extends Component {
         let endpoint = films.substr(films.indexOf("/api/") + 5);
         return <li key={films}>
           {/*Add a Link set to /films. Pass in the value of 'endpoint' for the text <<<<<<<<<<<<<<<<<<<<<<<<*/}
-        </li>
+          <Link to='/films'>
+            {endpoint}
+        </Link>
+      </li>
       })
       let starships = people.starships.map((starships)=>{
         let endpoint = starships.substr(starships.indexOf("/api/") + 5 );
         return <li key={starships}>
           {/*Add a Link set to /starships. Pass in the value of 'endpoint' for the text <<<<<<<<<<<<<<<<<*/}
+          <Link to='/starships'>
+            {endpoint}
+        </Link>
           </li>
       })
       return (
