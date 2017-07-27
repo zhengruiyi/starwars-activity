@@ -16,72 +16,72 @@ class List extends Component {
           {/*Add a Link set to /films. Pass in the value of 'endpoint' for the text <<<<<<<<<<<<<<<<<<<<<<<<*/}
           <Link to='/films'>
             {endpoint}
+          </Link>
+        </li>
+    })
+    let starships = people.starships.map((starships)=>{
+      let endpoint = starships.substr(starships.indexOf("/api/") + 5 );
+      return <li key={starships}>
+        {/*Add a Link set to /starships. Pass in the value of 'endpoint' for the text <<<<<<<<<<<<<<<<<*/}
+        <Link to='/starships'>
+          {endpoint}
         </Link>
       </li>
-      })
-      let starships = people.starships.map((starships)=>{
-        let endpoint = starships.substr(starships.indexOf("/api/") + 5 );
-        return <li key={starships}>
-          {/*Add a Link set to /starships. Pass in the value of 'endpoint' for the text <<<<<<<<<<<<<<<<<*/}
-          <Link to='/starships'>
-            {endpoint}
-        </Link>
-          </li>
-      })
-      return (
-        <div key={people.name} className="col-lg-10 col-lg-offset-1 card">
-          <div className="col-lg-4">
-            <div className="profile">
-              <h3 className = "headings">
-                <i className="fa fa-user" aria-hidden="true"></i>
-                  {people.name}
-              </h3>
-              <h4 className = "sub-headings">API Endpoint: {endpoint}</h4>
-              <hr/>
-              <h4 className = "sub-headings">Profile</h4>
-              <dl className="dl-horizontal">
-                <dt>Birth Year</dt>
-                <dd>{people.birth_year}</dd>
-                <dt>Gender</dt>
-                <dd>{people.gender}</dd>
-                <dt>Mass</dt>
-                <dd>{people.mass}</dd>
-                <dt>Height</dt>
-                <dd>{people.height}</dd>
-                <dt>Eye Color</dt>
-                <dd>{people.eye_color}</dd>
-                <dt>Hair Color</dt>
-                <dd>{people.hair_color}</dd>
-              </dl>
-            </div>
-          </div>
-          <div className="col-lg-4">
-            <h4 className = "sub-headings">Film Enpoints</h4>
-            <hr/>
-            <ul>
-              {films}
-            </ul>
-          </div>
-          <div className="col-lg-4">
-            <h4 className = "sub-headings">Starship Enpoints</h4>
-            <hr/>
-            <ul>
-              {starships}
-            </ul>
-          </div>
-        </div>
-      )
-    })
-    return(
-      <div className="row">
-        <div className="col-lg-10 col-lg-offset-1">
-          <h1 className="headings">Characters</h1>
+  })
+  return (
+    <div key={people.name} className="col-lg-10 col-lg-offset-1 card">
+      <div className="col-lg-4">
+        <div className="profile">
+          <h3 className = "headings">
+            <i className="fa fa-user" aria-hidden="true"></i>
+            {people.name}
+          </h3>
+          <h4 className = "sub-headings">API Endpoint: {endpoint}</h4>
           <hr/>
+          <h4 className = "sub-headings">Profile</h4>
+          <dl className="dl-horizontal">
+            <dt>Birth Year</dt>
+            <dd>{people.birth_year}</dd>
+            <dt>Gender</dt>
+            <dd>{people.gender}</dd>
+            <dt>Mass</dt>
+            <dd>{people.mass}</dd>
+            <dt>Height</dt>
+            <dd>{people.height}</dd>
+            <dt>Eye Color</dt>
+            <dd>{people.eye_color}</dd>
+            <dt>Hair Color</dt>
+            <dd>{people.hair_color}</dd>
+          </dl>
         </div>
-        {List}
       </div>
-    )
-  }
+      <div className="col-lg-4">
+        <h4 className = "sub-headings">Film Enpoints</h4>
+        <hr/>
+        <ul>
+          {films}
+        </ul>
+      </div>
+      <div className="col-lg-4">
+        <h4 className = "sub-headings">Starship Enpoints</h4>
+        <hr/>
+        <ul>
+          {starships}
+        </ul>
+      </div>
+    </div>
+  )
+})
+return(
+  <div className="row">
+    <div className="col-lg-10 col-lg-offset-1">
+      <h1 className="headings">Characters</h1>
+      <hr/>
+    </div>
+    {List}
+  </div>
+)
+}
 }
 
 class People extends Component {
